@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>Project #1: Fun with HTML Forms and Style Sheets</title>
+	 <meta charset="utf-8"/>
+    <script type="text/javascript">
+      // <![CDATA[
+         function change_style ( form ) {
+            var style = document.getElementById("myText").style;
+            for ( var i = 0; i < form.elements.length; i++ )
+               if (form.elements[i].name != "" && form.elements[i].value != "")
+                  style.setProperty(form.elements[i].name,form.elements[i].value);
+         }
+      // ]]>
+    </script>
+  </head>
+  <body onload="change_style(document.forms[0]);">
+  
+    <center>
+      <h1>Project #1: Fun with HTML Forms and Style Sheets</h1>
+	  
+	  </center>
+    <table>
+      <tr>
+        <td>
+          <form enctype="multipart/form-data" action="">
+            <fieldset>
+			
+              <legend>Change CSS properties:</legend>
+              <table>
+			  <center>
+			  <h4>Font Properties</h4>
+			  </center
+                <td>
+				  
+                    <!-- your code below this line -->
+                    <label>Font Color:
+                      <select name="color">
+                        <option>black</option>
+                        <option>blue</option>
+                        <option>green</option>
+                        <option>red</option>
+                        <option>yellow</option>
+                      </select>
+                    </label>
+					<label>Font Size:
+                      <select name="font-size"> <!-- 1-->
+                        <option>100%</option>
+                        <option>150%</option>
+                        <option>200%</option>
+                        <option>250%</option>
+                      </select>
+                    </label>
+					<label>Font Style: <!-- 2-->
+                      <select name="font-style">
+                        <option>normal</option>
+                        <option>italic</option>
+                       </select>
+                    </label>
+						<label>Font Variant: <!-- 3-->
+                      <select name="font-variant">
+                        <option>normal</option>
+                        <option>small-caps</option>
+                      </select>
+                    </label>
+					<label>Font Transform: <!-- 4-->
+                      <select name="text-transform">
+                        <option>initial</option>
+						<option>capitalize</option>
+						<option>uppercase</option>
+						<option>lowercase</option>
+                       </select>
+                    </label>
+					<label>Font Weight: <!-- 5-->
+                      <select name="font-weight">
+                        <option>normal</option>
+						<option>bold</option>
+					   </select>
+                    </label>
+					<label>Font Family: <!-- 6-->
+                      <select name="font-family">
+                        <option>Times New Roman</option>
+						<option>Georgia</option>
+						<option>Arial</option>
+					   </select>
+                    </label>
+					<label>Font Alignment:<!-- 7-->
+                      <select name="text-align">
+                        <option>left</option>
+						<option>center</option>
+						<option>right</option>
+					 </select>
+                    </label>
+					
+					<center>
+					<h4> Text Properties</h4>
+					</center>
+					
+					
+					<tr>
+					<label>Text Decoration:<!-- 8-->
+                      <select name="text-decoration">
+                        <option>normal</option>
+						<option>overline</option>
+						<option>line-through</option>
+						<option>underline</option>
+					 </select>
+                    </label>
+						<label>Text Indent:<!-- 9-->
+                      <select name="text-indent">
+                        <option>10px</option>
+						<option>25px</option>
+						<option>50px</option>
+						<option>100px</option>
+					 </select>
+                    </label>
+					<label>Text Shadow:<!-- 10-->
+                      <select name="text-shadow">
+                        <option>initial</option>
+						<option>2px 2px 8px #FF0000</option>
+						<option>2px 2px 8px #00FFFF</option>
+						<option>2px 2px 8px #7FFF00</option>
+					 </select>
+                    </label>					
+					
+					<label>Transform Text X:<!-- 11-->
+                      <select name="transform">
+                        <option>initial</option>
+						<option>rotateX(25deg)</option>
+						<option>rotateX(50deg)</option>
+						<option>rotateX(75deg)</option>						
+					 </select>
+                    </label>
+					
+					<center>
+					
+					<h4> Margin Properties</h4>
+					</center>
+					<label>Margin:<!-- 12-->
+                      <select name="margin">
+                        <option>10px</option>
+						<option>5px</option>
+						<option>15px</option>
+						<option>20px</option>
+					 </select>
+                    </label>
+					
+									
+					<label>Margin top:<!-- 13-->
+                      <select name="margin-top">
+                        <option>initial</option>
+						<option>1cm</option>
+						<option>2cm</option>
+						<option>3cm</option>						
+					 </select>
+                    </label>
+							
+							<center>
+							<h4> Border Properties</h4>
+							</center>
+					<label>Border Style:<!--14-->
+                      <select name="border-style">
+                        <option>solid</option>
+						<option>dotted</option>
+						<option>dashed</option>
+						<option>groove</option>				
+						<option>initial</option>
+					 </select>
+                    </label>
+					
+						<label>Border Top Color:<!--15-->
+                      <select name="border-top-color">
+                        <option>initial</option>
+						<option>#ff0000</option>
+						<option>#00FFFF</option>
+						<option>#7FFF00</option>				
+					 </select>
+                    </label>
+					
+                    <!-- your code above this line -->
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <input type="button" value="Change Style" onclick="change_style(this.form);"/>
+                    <input type="button" value="Reset" onclick="this.form.reset();change_style(this.form);"/>
+                  </td>
+                </tr>
+              </table>
+            </fieldset>
+          </form>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div id="myText" style="width: 500px; border: 2px solid #000; padding: 8px">
+This is an introductory web programming course for undergraduate CSE
+students. The objective of this course is to give the students a
+comprehensive introduction to the tools and skills required for both
+client- and server-side web programming and to teach students how to
+develop platform-independent sites using the most current web
+development technology. The goal of this course is not to cover the
+details of some technologies exhaustively, but to explain the
+underlying concepts and interactions and illustrate them with simple
+examples. That is, to give the students enough familiarity with these
+technologies so that they can build simple web applications, instead of
+using certain software packages available on the market.
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
